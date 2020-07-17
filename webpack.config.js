@@ -5,10 +5,20 @@ module.exports = {
   entry: './public/index.js',
   output: {
      filename: 'bundle.js',
+     publicPath: '/assets',
      path: path.resolve('dist/js')
   },
   module: {
     rules: [
+      {
+        test: /\.s[ac]ss$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -20,5 +30,9 @@ module.exports = {
         }
       }
     ]
+  },
+  devServer: {
+    port: 3000,
+    compress: true
   }
 }

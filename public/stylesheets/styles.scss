@@ -1,0 +1,15 @@
+$main-color: #2B213A;
+$wrapper-width: 90%;
+
+body {
+  font-family: 'Helvetica', 'Arial';
+}
+
+.wrapper {
+  width: $wrapper-width;
+  margin: auto;
+  background-color: $main-color;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
